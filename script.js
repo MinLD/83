@@ -31,6 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   const explosivePhotos = [...albumPhotos, ...albumPhotos, ...albumPhotos];
 
+  // Preload images to prevent long loading times when opening modals
+  const preloadedImages = [];
+  albumPhotos.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+    preloadedImages.push(img);
+  });
+
   const songs = [
     {
       id: 1,
