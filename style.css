@@ -13,6 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
+  touch-action: manipulation; /* Giảm thiểu việc zoom bậy bạ khi gõ đúp trên điện thoại */
 }
 
 body {
