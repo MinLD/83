@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chúc mừng ngày 8/3</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Audio Element (hidden) -->
+    <audio id="bg-music" loop>
+      <!-- Bạn có thể đổi link gốc tại đây nếu muốn, bài mặc định -->
+      <source
+        id="audio-source"
+        src="https://zingmp3.vn/bai-hat/Dung-Lam-Trai-Tim-Anh-Dau-Heaven-Violet/Z808WFOD.html"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <div id="app">
+      <!-- 1. LOCK SCREEN -->
+      <section id="lock-screen" class="screen active">
+        <div class="lock-container">
+          <div class="lock-left">
+            <img src="../album/ab3.jpg" alt="My Girl" class="lock-photo" />
+          </div>
+          <div class="lock-right">
+            <div class="heart-icon">❤️</div>
+
+            <div class="pin-display">
+              <div class="pin-dot"></div>
+              <div class="pin-dot"></div>
+              <div class="pin-dot"></div>
+              <div class="pin-dot"></div>
+              <div class="pin-dot"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <div class="keypad">
+              <button class="key" data-val="1">1</button>
+              <button class="key" data-val="2">2</button>
+              <button class="key" data-val="3">3</button>
+              <button class="key" data-val="4">4</button>
+              <button class="key" data-val="5">5</button>
+              <button class="key" data-val="6">6</button>
+              <button class="key" data-val="7">7</button>
+              <button class="key" data-val="8">8</button>
+              <button class="key" data-val="9">9</button>
+              <button class="key empty" disabled></button>
+              <button class="key" data-val="0">0</button>
+              <button class="key clear-btn" data-val="del">⌫</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. MAIN MENU -->
+      <section id="main-menu" class="screen">
+        <div class="menu-grid">
+          <button class="menu-btn" data-target="music">
+            <div class="menu-icon">🎵</div>
+            <span>Music</span>
+          </button>
+          <button class="menu-btn" data-target="letter">
+            <div class="menu-icon">💌</div>
+            <span>Letter</span>
+          </button>
+          <button class="menu-btn" data-target="album">
+            <div class="menu-icon">🖼️</div>
+            <span>Image</span>
+          </button>
+          <button class="menu-btn" data-target="gift">
+            <div class="menu-icon">🎁</div>
+            <span>Gift</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 3. MODALS CONTAINER (Overlay) -->
+      <div id="modal-overlay" class="hidden">
+        <!-- Music Modal -->
+        <div id="modal-music" class="modal">
+          <button class="close-btn">×</button>
+          <div class="modal-header">🎵 MUSIC PLAYER</div>
+          <div class="modal-content">
+            <div class="player-disk">
+              <img id="player-cover" src="placeholder_girl.png" alt="Cover" />
+            </div>
+            <h3 id="player-title">Tên bài hát</h3>
+
+            <!-- Controls -->
+            <div class="player-controls">
+              <button class="ctrl-btn" id="prev-btn">⏮</button>
+              <button class="ctrl-btn play-pause" id="play-pause-btn">▶</button>
+              <button class="ctrl-btn" id="next-btn">⏭</button>
+            </div>
+
+            <!-- Song List -->
+            <div class="song-list" id="song-list">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Letter Modal -->
+        <div id="modal-letter" class="modal">
+          <button class="close-btn">×</button>
+          <div class="modal-header">💌 LOVE LETTER</div>
+          <div class="modal-content letter-content">
+            <div class="typewrite-text" id="typewrite-text">
+              <!-- JS Typewriter Effect -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Album Modal -->
+        <div id="modal-album" class="modal">
+          <button class="close-btn">×</button>
+          <div class="modal-header">🖼️ MEMORY ALBUM</div>
+          <div class="modal-content album-content" id="album-grid">
+            <!-- Cards Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Gift Modal -->
+        <div id="modal-gift" class="modal">
+          <button class="close-btn" style="z-index: 999">×</button>
+          <div class="gift-scene" id="gift-scene">
+            <button id="open-gift-btn">Chạm vào hoa nhé 🌸</button>
+            <!-- Elements generated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background particles logic from earlier -->
+    <div id="particles"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
